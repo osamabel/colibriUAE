@@ -1,13 +1,314 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap');
+
+
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+.icon-gradient {
+  background-image: url("/public/noicy-gradient.png");
+  background-position: 89% 0;
+  background-size: 1030px 340px;
+  border-radius: 9999px; /* This makes it rounded-full */
+  padding: 12px; /* This replaces the p-3 */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.cf-gradient-span{
+    -webkit-text-fill-color: transparent;
+    background-image: url("/public/noicy-gradient.png");
+    background-position: 89% 0;
+    background-size: 1030px 340px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: 900;
+    line-height: 80%
 }
+.cf-service-number {
+    color: #ff305f;
+    text-align: center;
+    letter-spacing: -.16px;
+    padding-top: 4px;
+    font-family: Leira Lite, sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 127%;
+  }
+  
+  .cf-features-section-2-icon-wrap.cf-absolute {
+    background-color: #ff305f3f;
+    background-image: none;
+    border-radius: 100%;
+    width: 80%;
+    max-width: 46px;
+    height: 46px;
+    margin-top: 50px;
+    margin-left: 36px;
+    position: absolute;
+    inset: -6% auto auto 6%;
+    overflow: visible;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .slider-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .slider-track {
+    display: flex;
+    width: fit-content;
+  }
+  @layer base {
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 240 10% 3.9%;
+      --card: 0 0% 100%;
+      --card-foreground: 240 10% 3.9%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 240 10% 3.9%;
+      --primary: 240 5.9% 10%;
+      --primary-foreground: 0 0% 98%;
+      --secondary: 240 4.8% 95.9%;
+      --secondary-foreground: 240 5.9% 10%;
+      --muted: 240 4.8% 95.9%;
+      --muted-foreground: 240 3.8% 46.1%;
+      --accent: 240 4.8% 95.9%;
+      --accent-foreground: 240 5.9% 10%;
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 0 0% 98%;
+      --border: 240 5.9% 90%;
+      --input: 240 5.9% 90%;
+      --ring: 240 5.9% 10%;
+      --radius: 0.5rem;
+    }
+   
+    .dark {
+      --background: 240 10% 3.9%;
+      --foreground: 0 0% 98%;
+      --card: 240 10% 3.9%;
+      --card-foreground: 0 0% 98%;
+      --popover: 240 10% 3.9%;
+      --popover-foreground: 0 0% 98%;
+      --primary: 0 0% 98%;
+      --primary-foreground: 240 5.9% 10%;
+      --secondary: 240 3.7% 15.9%;
+      --secondary-foreground: 0 0% 98%;
+      --muted: 240 3.7% 15.9%;
+      --muted-foreground: 240 5% 64.9%;
+      --accent: 240 3.7% 15.9%;
+      --accent-foreground: 0 0% 98%;
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 0 0% 98%;
+      --border: 240 3.7% 15.9%;
+      --input: 240 3.7% 15.9%;
+      --ring: 240 4.9% 83.9%;
+    }
+  }
+  
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .cube {
+    position: relative;
+    width: 300px;
+    height: 60px;
+    margin: 5rem auto;
+    transform-style: preserve-3d;
+    perspective: 400px;
+  }
+  
+  /* Base faces */
+  .a, .b, .c, .d {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    z-index: 222;
+  }
+  
+  /* Face elements */
+  .a:before, .b:before, .c:before, .d:before,
+  .a:after, .b:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 60px;
+  }
+  @media (min-width: 768px) {
+    .cube {
+      width: 500px;
+    }
+    
+    .a:before, .b:before, .c:before, .d:before,
+    .a:after, .b:after {
+      width: 500px;
+    }
+   }
+  
+  /* Transforms */
+  .b {
+    transform: rotateX(75deg) translateY(-60px);
+    transform-origin: 0% 0%;
+  }
+  
+  .c {
+    transform: rotateX(75deg);
+    transform-origin: 100% 100%;
+  }
+  
+  .d {
+    transform: translateZ(-60px) translateY(-15px);
+  }
+  
+  /* Colors */
+  .a, .b {
+    /* background: rgba(116, 198, 43, 0.8); */
+    background: #ff305f;
+  }
+  
+  .c, .d {
+    /* background: rgba(116, 198, 43, 0.5); */
+    background: #d91946;
+  }
+  
+  /* Shadows and effects */
+  .c:before {
+    box-shadow: 0px 30px 20px -20px rgba(0,0,0,0.4),
+                0px 40px 15px -15px rgba(0,0,0,0.25);
+  }
+  
+  .a:before, .b:before, .c:before, .d:before {
+    background: rgba(0,0,0,0.05);
+  }
+  
+  .a:after {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.07), transparent);
+  }
+  
+  .b:after {
+    background: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0.25));
+  }
+  
+  /* Slider styles */
+  .ui-slider {
+    height: 5px;
+    border: none;
+    background: rgba(0,0,0,0.1);
+    box-shadow: 0px 2px 2px rgba(255,255,255,0.25),
+                inset 0px 1px 3px rgba(0,0,0,0.3);
+  }
+  
+  .ui-slider:before,
+  .ui-slider:after {
+    content: 'IIIIIIIIIII';
+    left: 2px;
+    width: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: rgba(0,0,0,0.3);
+    letter-spacing: 41px;
+    text-shadow: 1px 1px 0px rgba(255,255,255,0.2);
+    position: absolute;
+  }
+
+  @media (max-width: 768px) {
+    .ui-slider:before, .ui-slider:after{
+      content: 'IIIIIII';
+    }
+   }
+  
+  .ui-slider:before {
+    top: -1.4rem;
+  }
+  
+  .ui-slider:after {
+    bottom: -1.4rem;
+  }
+  
+  /* Handle styles */
+  .ui-slider-handle {
+    position: absolute;
+    top: -8px;
+    width: 35px;
+    height: 22px;
+    margin-left: -13px;
+    padding-left: 4px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 2px;
+    text-align: center;
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 1.2rem;
+    line-height: 20px;
+    color: rgba(0,0,0,0.5);
+    text-decoration: none;
+    letter-spacing: 3px;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px rgba(255,255,255,1);
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.3);
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 500;
+  }
+  
+  /* Range input styles */
+  .pricing {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    left: 0;
+  }
+  
+  .pricing::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 26px;
+    height: 20px;
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  .pricing::-moz-range-thumb {
+    width: 26px;
+    height: 20px;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .pricing:focus {
+    outline: none;
+  }
